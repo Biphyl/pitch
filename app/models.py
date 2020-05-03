@@ -15,4 +15,22 @@ class User(UserMixin,db.model):
     pitches = db.relationship('Pitch', backref = 'user', lazy = 'dynamic')
     comments = db.relationship('Comment', backref = 'user', lazy = 'dynamic')
 
+    def save_user(self):
+        db.session.add(self)
+        db.session.commit()
     
+    def delete_user(self):
+        db.session.delete(self)
+        db.session.commit()
+    @property
+    def password(self):
+        raise AttributeError('You cannot read the password attribute')
+
+    @password.setter
+    def password(self, password):
+        self.password_u = generate_password_hash(password)
+   
+    def verify_password(self, password):
+        return check_password_hash(self.password_u, password)
+    def __repr__(self):
+     return f'User {self.username}'
