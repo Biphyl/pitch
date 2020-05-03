@@ -1,8 +1,9 @@
 from flask import Flask
-from config import Config
+# from config import Config
+import os
 from flask_sqlalchemy import SQLAlchemy
 
-bootstrap = Bootstrap
+# bootstrap = Bootstrap
 
 # Initializing application
 app = Flask(__name__)
