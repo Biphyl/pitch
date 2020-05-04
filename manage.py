@@ -2,7 +2,7 @@ from app import app
 from flask_script import Manager, Server
 from flask_migrate import Migrate,MigrateCommand
 from app.models import User
-from app import db,
+from app import pitch_app,db
 from config import config_options
 
 
