@@ -52,3 +52,21 @@ class Pitch(db.Model):
     def save_pitch(self):
         db.session.add(self)
         db.session.commit()
+
+
+class Comment(db.Model):
+    __tablename__ = 'comments'
+
+    id = db.Column(db.Integer, primary_key = True)
+    content = db.Column(db.String)
+    date_posted = db.Column(db.DateTime, default = datetime.utcnow)
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
+    pitch_id = db.Column(db.Integer, db.ForeignKey('pitches.id'))
+
+    def save_comment(self):
+        db.session.add(self)
+        db.session.commit()
+    @login_manager.user_loader
+        
+    def load_user(user_id):
+        return User.query.get(int(user_id))
