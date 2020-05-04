@@ -4,11 +4,11 @@ import os
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 
-# bootstrap = Bootstrap
 
 # Initializing application
 app = Flask(__name__)
-
+# bootstrap = Bootstrap()
+db = SQLAlchemy()
 
 login_manager = LoginManager()
 login_manager.session_protection = 'strong'

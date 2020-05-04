@@ -6,11 +6,6 @@ class Config():
 
 
 
-
-
-
-
-
 class ProductionConfig(config):
     pass
 
@@ -21,4 +16,4 @@ class StagingConfig(config):
 class DevelopmentConfig(config):
     DEBUG = True
 
-    
+
