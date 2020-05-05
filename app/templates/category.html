@@ -1,4 +1,4 @@
-{% extends 'base.html'%}
+<!-- {% extends 'base.html'%}
 {% import 'macros.html' as macro %}
 {% block styles%}
 {{ super() }}
@@ -28,4 +28,17 @@
     </nav>
     {{macro.showPitch(general)}}
 </div>
-{% endblock %}
+{% endblock %} -->
+
+{% extends 'base.html' %} 
+{% import 'macros.html' as macro%}
+
+{% block content %}
+<h3 class="text-center">{{category.name|upper}} PITCH</h3>
+<hr>
+
+{% if pitches %}
+
+{% for pitch in pitches %}
+<h3>{{pitch.id}}</h3>
+{%else%}

@@ -1,4 +1,4 @@
-<html>
+<!-- <html>
 {% block styles %}
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
@@ -16,4 +16,19 @@
     {% endblock %}
 </body>
 
-</html>
+</html> -->
+
+{% extends 'bootstrap/base.html'%}
+
+<!-- Navbar block  --> 
+{% block navbar %}
+{% include 'navbar.html' %}
+{% endblock %}
+
+{%block styles %}
+{{super()}}
+<!--Importing the simple mde css and js files  -->
+{{ simplemde.css}}
+{{ simplemde.js }}
+
+{% endblock %}

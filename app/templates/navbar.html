@@ -1,4 +1,4 @@
-<link rel="stylesheet" type="text/css" href="../static/css/styles.css">
+<!-- <link rel="stylesheet" type="text/css" href="../static/css/styles.css">
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -60,4 +60,34 @@
             {%endif%}
         </ul>
     </div>
-</nav>
+</nav> -->
+
+<div class="navbar navbar-inverse" role="navigation" style="background-color:white; border:white;">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/" style="color:black; font-weight:bolder;"> <a href="/" class="btn btn-lg">
+                    <span class="glyphicon glyphicon-home"></span> Home
+                </a></a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                {% if current_user.is_authenticated %}
+                <li><a href="{{url_for('main.profile',uname=current_user.username)}}"
+                        style="color:black; font-weight:bolder;">Profile</a></li>
+                <li><a href="{{url_for('main.profile',uname=current_user.username)}}"
+                        style="color:black; font-weight:bolder;">{{current_user.username}}</a></li>
+                <li><a href="{{url_for('auth.logout')}}" style="color:black; font-weight:bolder;">Sign out</a></li>
+                {% else %}
+                <li><a href="{{url_for('auth.login')}}" style="color:black; font-weight:bolder;">Log in</a></li>
+                {%endif%}
+            </ul>
+        </div>
+
+    </div>
+</div>

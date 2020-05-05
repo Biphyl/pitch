@@ -1,4 +1,4 @@
-{% extends 'base.html'%}
+<!-- {% extends 'base.html'%}
 {% import 'macros.html' as macro%}
 {% block styles%}
 {{ super() }}
@@ -29,4 +29,26 @@
 <a type=" button" class="btn btn-secondary btn-sm" href="{{url_for('main.new_pitch')}}">Add a Pitch</a>
 {{macro.showPitch(promotion)}}
 </div>
+{% endblock %} -->
+
+{% extends 'base.html'%}
+{% import 'macros.html' as macro%}
+
+
+{% block content %}
+
+    <div class="container">
+        <h3>Promotion Pitches</h3>
+        <a href="{{url_for('main.new_pitch')}}">
+            <br>
+            Add a new Pitch
+        </a>
+
+        <hr>
+        
+            {{macro.displayPitchesInCategories(pitches,3)}}
+        <hr>
+    
+    </div>
+
 {% endblock %}
