@@ -37,8 +37,8 @@ class Config:
     '''
     General configuration parent class
     '''
-    SECRET_KEY = 'TheDifference'
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://vincent:Empharse333@localhost/pitch'
+    SECRET_KEY = 'Bilovine'
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://biron:Biron4745@localhost/pitch'
     UPLOADED_PHOTOS_DEST ='app/static/photos'
     
     #  email configurations
@@ -47,15 +47,15 @@ class Config:
     MAIL_USE_TLS = True
     MAIL_USERNAME = os.environ.get("MAIL_USERNAME")
     MAIL_PASSWORD = os.environ.get("MAIL_PASSWORD")
-    SUBJECT_PREFIX = 'One Minute Pitch'
-    SENDER_EMAIL = 'khalifngeno@gmail.com'
+    SUBJECT_PREFIX = 'Pitch'
+    SENDER_EMAIL = 'bironodhiambo00@gmail.com@gmail.com'
 
     # simple mde  configurations
     SIMPLEMDE_JS_IIFE = True
     SIMPLEMDE_USE_CDN = True
 
 class TestConfig(Config):
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://vincent:Empharse333@localhost/pitch_test'
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://biron:Biron4745@localhost/pitch'
 
 
 class ProdConfig(Config):
