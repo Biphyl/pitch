@@ -5,7 +5,7 @@ from  flask_migrate import Migrate, MigrateCommand
 
 #creating an app instance  
 app = create_app('production')  
-configure_uploads(app, (csvfiles,), lambda app: '/var/uploads')
+# configure_uploads(app, (csvfiles,), lambda app: '/var/uploads')
 
 
 manager = Manager(app)
