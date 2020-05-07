@@ -7,7 +7,7 @@ from app.models import User
 
 
 #creating an app instance  
-app = create_app('production')  
+app = create_app('development')  
 # configure_uploads(app, (csvfiles,), lambda app: '/var/uploads')
 
 
@@ -24,4 +24,4 @@ def make_shell_context():
     return dict(app = app,db = db,User = User, Pitch = Pitch, Role = Role, Comment = Comment ) 
 
 if __name__ == '__main__':
-    manage.run(DEBUG=True)
+    manage.run()
