@@ -5,11 +5,6 @@ from  flask_migrate import Migrate, MigrateCommand
 from app.models import User
 
 
-db.init_app(app)
-if config is None:
-    app.config.from_object(config.BaseConfig)
-else:
-    app.config.from_object(config)
 #creating an app instance  
 app = create_app('production')  
 # configure_uploads(app, (csvfiles,), lambda app: '/var/uploads')
